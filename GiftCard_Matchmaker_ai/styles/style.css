@@ -1,0 +1,115 @@
+/* === GLOBAL STYLES === */
+body {
+  background: linear-gradient(to right, #f0f2f5, #ffffff);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: #333;
+}
+
+/* === MAIN CONTAINERS === */
+div[data-testid="column"] > div {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease-in-out;
+}
+div[data-testid="column"] > div:hover {
+  transform: translateY(-4px);
+}
+
+/* === HEADINGS === */
+h1, h2, h3 {
+  color: #ff4b4b;
+  letter-spacing: -0.5px;
+}
+
+/* === BUTTONS === */
+button {
+  background: #ff4b4b !important;
+  color: white !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 0.6em 1.4em !important;
+  box-shadow: 0 4px 10px rgba(255, 75, 75, 0.4) !important;
+}
+
+/* === SIDEBAR === */
+section[data-testid="stSidebar"] {
+  background: #1e1e1e;
+  padding: 2rem 1rem;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 75, 75, 0.1);
+}
+
+.sidebar .stSelectbox, 
+.sidebar .stSlider, 
+.sidebar .stTextInput {
+  margin-bottom: 15px;
+}
+
+/* === REVIEW BOX === */
+.review-box {
+  background-color: #eef1f6;
+  padding: 1em;
+  border-radius: 10px;
+  font-style: italic;
+  border-left: 4px solid #ff4b4b;
+}
+
+/* === INPUTS === */
+input, textarea, .stTextInput, .stTextArea {
+  border-radius: 8px !important;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  margin-top: 2em;
+  color: #aaa;
+  font-size: 0.9em;
+}
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+  div[data-testid="column"] > div {
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.8em;
+  }
+  
+  .review-box {
+    font-size: 0.9em;
+  }
+  
+  footer {
+    font-size: 0.8em;
+  }
+}
+/* Card style */
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
