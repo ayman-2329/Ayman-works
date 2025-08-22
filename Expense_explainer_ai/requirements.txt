@@ -1,0 +1,48 @@
+# Streamlit app framework
+streamlit>=1.30.0
+
+# Data handling
+pandas>=2.0.0
+numpy>=1.24.0
+python-dateutil>=2.8.2
+
+# File parsing
+PyPDF2>=3.0.1
+python-docx>=1.1.0
+Pillow>=10.0.0
+pytesseract>=0.3.10
+python-magic-bin; platform_system=="Windows"
+
+# OCR dependencies (Tesseract must be installed separately)
+
+# Plotting
+plotly>=5.18.0
+
+# PDF generation
+fpdf>=1.7.2
+reportlab>=4.0.5
+
+# AI/NLP
+transformers>=4.40.0
+sentence-transformers>=2.2.2
+
+# Forecasting
+prophet>=1.1.5
+cmdstanpy>=1.1.0
+
+# FAISS for vector search
+faiss-cpu>=1.7.4
+
+# LangChain for RAG
+langchain>=0.2.0
+langchain-community>=0.0.30
+
+# MongoDB (if used)
+pymongo>=4.6.1
+
+# Environment variables
+python-dotenv>=1.0.1
+
+# Optional for extended parsing
+pdfplumber>=0.10.3
+textract==1.6.1

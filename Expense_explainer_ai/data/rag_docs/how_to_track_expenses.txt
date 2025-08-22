@@ -1,0 +1,3 @@
+Start tracking expenses by noting down every transaction in a notebook, spreadsheet, or app.
+Categorize them: groceries, transport, rent, entertainment, etc. Review weekly to spot patterns and leakages.
+Apps like Walnut, Goodbudget, or even a simple Google Sheet can help. Track digitally for better accuracy.
