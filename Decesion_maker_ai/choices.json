@@ -1,0 +1,6 @@
+{
+  "food": ["pizza", "burger", "pasta", "noodles", "salad"],
+  "movies": ["comedy", "thriller", "sci-fi", "romance", "horror"],
+  "travel": ["mountains", "beach", "city tour", "camping", "staycation"],
+  "games": ["chess", "cards", "cricket", "football", "video games"]
+}
