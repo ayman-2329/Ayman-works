@@ -17,7 +17,7 @@
 This repository is a **collection of everything I work on during my college journey**, including:
 
 - 🎓 **Academic Projects** – Major & mini projects  
-- 🤖 **AI & ML Experiments** – NLP, DL, CV models, etc.  
+- 🤖 **AI & ML Experiments** – NLP, DL, CV models, etc.(AI/ML Branch)  
 - 📱 **App Development** – Flutter apps & full-stack projects  
 - 📝 **Assignments & Practice** – Problem-solving & coursework  
 
