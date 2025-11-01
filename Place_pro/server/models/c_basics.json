@@ -1,0 +1,305 @@
+{
+  "_id": {"$oid": "68a6e631ac5b45b472c484cf"},
+  "courses": {
+    "c_basics": {
+      "id": "c_basics",
+      "title": "C Programming Fundamentals",
+      "description": "A comprehensive introduction to C programming for beginners",
+      "duration": "6 weeks",
+      "difficulty": "Beginner",
+      "category": "programming",
+      "image": "https://example.com/images/c_course.jpg",
+      "lessons": [
+        {
+          "id": "lesson1",
+          "title": "Introduction to C",
+          "order": 1,
+          "content": {
+            "text": "C is a powerful general-purpose programming language created by Dennis Ritchie in 1972. It is widely used for system programming, embedded systems, and as the foundation of many modern languages.",
+            "keyPoints": [
+              "C is compiled and procedural",
+              "Efficient and close to hardware",
+              "Portable across platforms",
+              "Foundation for many modern languages"
+            ],
+            "codeExample": {
+              "title": "Your First C Program",
+              "code": "#include <stdio.h>\n\nint main() {\n    printf(\"Hello, World!\\n\");\n    return 0;\n}",
+              "explanation": "This is the classic Hello World program in C. The `#include <stdio.h>` imports standard input/output functions, and `printf` prints text to the console."
+            },
+            "exercises": [
+              {
+                "id": "ex1",
+                "title": "Print Your Name",
+                "description": "Write a C program that prints your name on the screen.",
+                "solution": "#include <stdio.h>\nint main() {\n    printf(\"Your Name\\n\");\n    return 0;\n}"
+              },
+              {
+                "id": "ex2",
+                "title": "Simple Calculator",
+                "description": "Write a program that calculates the sum of 15 and 27.",
+                "solution": "#include <stdio.h>\nint main() {\n    int result = 15 + 27;\n    printf(\"%d\\n\", result);\n    return 0;\n}"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lesson2",
+          "title": "Variables and Data Types",
+          "order": 2,
+          "content": {
+            "text": "Variables in C are containers for storing data values. C has several fundamental data types: int, float, char, double, and more.",
+            "keyPoints": [
+              "Variables must be declared before use",
+              "C is statically typed",
+              "Data types include int, float, char, double",
+              "Type casting allows conversion"
+            ],
+            "codeExample": {
+              "title": "Working with Variables and Data Types",
+              "code": "#include <stdio.h>\nint main() {\n    int age = 25;\n    float height = 5.9;\n    char grade = 'A';\n    double pi = 3.14159;\n\n    printf(\"Age: %d\\n\", age);\n    printf(\"Height: %.2f\\n\", height);\n    printf(\"Grade: %c\\n\", grade);\n    printf(\"Pi: %.5lf\\n\", pi);\n\n    return 0;\n}",
+              "explanation": "This example demonstrates different data types in C. The printf() function requires format specifiers like %d, %f, %c, and %lf."
+            },
+            "exercises": [
+              {
+                "id": "ex3",
+                "title": "Variable Assignment",
+                "description": "Declare and print variables for your name (string), age (int), height (float), and grade (char).",
+                "solution": "#include <stdio.h>\nint main() {\n    char name[] = \"John\";\n    int age = 20;\n    float height = 5.8;\n    char grade = 'A';\n\n    printf(\"Name: %s, Age: %d, Height: %.1f, Grade: %c\\n\", name, age, height, grade);\n    return 0;\n}"
+              },
+              {
+                "id": "ex4",
+                "title": "Type Conversion",
+                "description": "Convert a float to an int and print the result.",
+                "solution": "#include <stdio.h>\nint main() {\n    float num = 12.75;\n    int result = (int)num;\n    printf(\"Converted: %d\\n\", result);\n    return 0;\n}"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lesson3",
+          "title": "Control Flow",
+          "order": 3,
+          "content": {
+            "text": "Control flow statements in C allow you to control program execution. C provides if-else statements, switch cases, and loops (for, while, do-while).",
+            "keyPoints": [
+              "Conditional statements execute based on conditions",
+              "Loops repeat code execution",
+              "Switch is useful for multiple cases",
+              "Break and continue modify loop behavior"
+            ],
+            "codeExample": {
+              "title": "Conditionals and Loops",
+              "code": "#include <stdio.h>\nint main() {\n    int score = 85;\n    if(score >= 90) {\n        printf(\"Grade A\\n\");\n    } else if(score >= 80) {\n        printf(\"Grade B\\n\");\n    } else {\n        printf(\"Grade C or below\\n\");\n    }\n\n    printf(\"\\nFor loop:\\n\");\n    for(int i = 1; i <= 5; i++) {\n        printf(\"%d\\n\", i);\n    }\n\n    printf(\"\\nWhile loop:\\n\");\n    int j = 1;\n    while(j <= 3) {\n        printf(\"%d\\n\", j);\n        j++;\n    }\n\n    return 0;\n}",
+              "explanation": "This shows if-else for conditions, a for loop for iteration, and a while loop. C also supports do-while which executes at least once."
+            },
+            "exercises": [
+              {
+                "id": "ex5",
+                "title": "Even or Odd",
+                "description": "Write a program that checks if a number is even or odd.",
+                "solution": "#include <stdio.h>\nint main() {\n    int num = 7;\n    if(num % 2 == 0)\n        printf(\"%d is even\\n\", num);\n    else\n        printf(\"%d is odd\\n\", num);\n    return 0;\n}"
+              },
+              {
+                "id": "ex6",
+                "title": "Sum of Numbers",
+                "description": "Calculate the sum of numbers from 1 to 10 using a loop.",
+                "solution": "#include <stdio.h>\nint main() {\n    int total = 0;\n    for(int i = 1; i <= 10; i++) {\n        total += i;\n    }\n    printf(\"Sum: %d\\n\", total);\n    return 0;\n}"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lesson4",
+          "title": "Functions",
+          "order": 4,
+          "content": {
+            "text": "Functions in C are blocks of code that perform specific tasks. They make programs modular, reusable, and easier to read.",
+            "keyPoints": [
+              "Functions must be declared and defined",
+              "Can accept parameters and return values",
+              "void functions return nothing",
+              "Functions help modularize programs"
+            ],
+            "codeExample": {
+              "title": "Defining and Using Functions",
+              "code": "#include <stdio.h>\n\nint add(int a, int b) {\n    return a + b;\n}\n\nvoid greet() {\n    printf(\"Hello, welcome to C!\\n\");\n}\n\nint main() {\n    greet();\n    int result = add(5, 3);\n    printf(\"5 + 3 = %d\\n\", result);\n    return 0;\n}",
+              "explanation": "This program shows a function with parameters and return value (`add`) and a void function (`greet`)."
+            },
+            "exercises": [
+              {
+                "id": "ex7",
+                "title": "Area Calculator",
+                "description": "Write a function that calculates the area of a rectangle given its length and width.",
+                "solution": "#include <stdio.h>\nint rectangle_area(int l, int w) {\n    return l * w;\n}\nint main() {\n    printf(\"Area: %d\\n\", rectangle_area(5,3));\n    return 0;\n}"
+              },
+              {
+                "id": "ex8",
+                "title": "Factorial Function",
+                "description": "Create a function that calculates the factorial of a number.",
+                "solution": "#include <stdio.h>\nint factorial(int n) {\n    int result = 1;\n    for(int i=1; i<=n; i++) {\n        result *= i;\n    }\n    return result;\n}\nint main() {\n    printf(\"%d\\n\", factorial(5));\n    return 0;\n}"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lesson5",
+          "title": "Working with Files",
+          "order": 5,
+          "content": {
+            "text": "C provides file handling functions for reading and writing to files using the stdio.h library.",
+            "keyPoints": [
+              "Use FILE* pointer for file operations",
+              "fopen(), fclose() open and close files",
+              "fscanf(), fprintf(), fgets(), fputs() for file I/O",
+              "Always check if file opened successfully"
+            ],
+            "codeExample": {
+              "title": "Reading and Writing Files",
+              "code": "#include <stdio.h>\nint main() {\n    FILE *f;\n    f = fopen(\"example.txt\", \"w\");\n    fprintf(f, \"Hello, C!\\n\");\n    fclose(f);\n\n    char buffer[100];\n    f = fopen(\"example.txt\", \"r\");\n    while(fgets(buffer, 100, f)) {\n        printf(\"%s\", buffer);\n    }\n    fclose(f);\n    return 0;\n}",
+              "explanation": "This program writes to a file using fprintf, then reads it line by line using fgets."
+            },
+            "exercises": [
+              {
+                "id": "ex9",
+                "title": "Word Counter",
+                "description": "Write a program that counts words in a file.",
+                "solution": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\nint main() {\n    FILE *f = fopen(\"example.txt\", \"r\");\n    char word[100];\n    int count = 0;\n    while(fscanf(f, \"%s\", word) == 1) count++;\n    fclose(f);\n    printf(\"Words: %d\\n\", count);\n    return 0;\n}"
+              },
+              {
+                "id": "ex10",
+                "title": "File Copy",
+                "description": "Copy the content of one file to another.",
+                "solution": "#include <stdio.h>\nint main() {\n    FILE *src = fopen(\"example.txt\", \"r\");\n    FILE *dest = fopen(\"copy.txt\", \"w\");\n    char c;\n    while((c = fgetc(src)) != EOF) fputc(c, dest);\n    fclose(src);\n    fclose(dest);\n    printf(\"File copied successfully!\\n\");\n    return 0;\n}"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lesson6",
+          "title": "Introduction to Pointers and Arrays",
+          "order": 6,
+          "content": {
+            "text": "Pointers and arrays are core concepts in C. Pointers store memory addresses, and arrays hold multiple elements of the same type.",
+            "keyPoints": [
+              "Arrays store fixed-size sequential elements",
+              "Pointers hold memory addresses",
+              "Pointer arithmetic allows traversal of arrays",
+              "Essential for dynamic memory and advanced C"
+            ],
+            "codeExample": {
+              "title": "Pointers and Arrays",
+              "code": "#include <stdio.h>\nint main() {\n    int arr[5] = {10, 20, 30, 40, 50};\n    int *ptr = arr;\n\n    for(int i=0; i<5; i++) {\n        printf(\"arr[%d] = %d, *(ptr+%d) = %d\\n\", i, arr[i], i, *(ptr+i));\n    }\n    return 0;\n}",
+              "explanation": "This example demonstrates how arrays and pointers are closely related in C. The array name itself acts as a pointer to the first element."
+            },
+            "exercises": [
+              {
+                "id": "ex11",
+                "title": "Array Traversal",
+                "description": "Print all elements of an array using a pointer.",
+                "solution": "#include <stdio.h>\nint main() {\n    int arr[3] = {5,10,15};\n    int *p = arr;\n    for(int i=0;i<3;i++) printf(\"%d\\n\", *(p+i));\n    return 0;\n}"
+              },
+              {
+                "id": "ex12",
+                "title": "Pointer Swap",
+                "description": "Swap two numbers using pointers.",
+                "solution": "#include <stdio.h>\nvoid swap(int *a, int *b) {\n    int temp = *a;\n    *a = *b;\n    *b = temp;\n}\nint main() {\n    int x=5,y=10;\n    swap(&x,&y);\n    printf(\"x=%d, y=%d\\n\",x,y);\n    return 0;\n}"
+              }
+            ]
+          }
+        }
+      ],
+      "quiz": {
+        "id": "c_basics_quiz",
+        "title": "C Basics Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following is the correct way to start a C program?",
+            "options": ["#begin", "start main()", "#include <stdio.h>", "function main()"],
+            "correctAnswer": "#include <stdio.h>",
+            "explanation": "Every C program generally includes header files like stdio.h for input/output."
+          },
+          {
+            "id": "q2",
+            "question": "Which format specifier is used to print an integer?",
+            "options": ["%i", "%d", "%f", "%c"],
+            "correctAnswer": "%d",
+            "explanation": "In printf, %d is used to print integers."
+          },
+          {
+            "id": "q3",
+            "question": "Which loop in C executes at least once?",
+            "options": ["for", "while", "do-while", "None"],
+            "correctAnswer": "do-while",
+            "explanation": "The do-while loop executes the block once before checking the condition."
+          },
+          {
+            "id": "q4",
+            "question": "What is the correct way to declare a function in C?",
+            "options": ["func myFunction()", "void myFunction()", "function myFunction()", "def myFunction()"],
+            "correctAnswer": "void myFunction()",
+            "explanation": "Functions are declared with a return type, name, and parentheses. Example: void myFunction()."
+          },
+          {
+            "id": "q5",
+            "question": "Which of the following opens a file for reading?",
+            "options": [
+              "fopen(\"file.txt\", \"read\")",
+              "open(\"file.txt\", \"r\")",
+              "fopen(\"file.txt\", \"r\")",
+              "file.open(\"file.txt\")"
+            ],
+            "correctAnswer": "fopen(\"file.txt\", \"r\")",
+            "explanation": "In C, fopen() is used for file handling. Mode \"r\" is for reading."
+          },
+          {
+            "id": "q6",
+            "question": "What is a pointer in C?",
+            "options": [
+              "A variable that stores a memory address",
+              "A special type of array",
+              "A reference to another program",
+              "A preprocessor directive"
+            ],
+            "correctAnswer": "A variable that stores a memory address",
+            "explanation": "Pointers hold the address of other variables, allowing direct memory manipulation."
+          },
+          {
+            "id": "q7",
+            "question": "Which operator is used to access the value pointed by a pointer?",
+            "options": ["&", "*", "->", "%"],
+            "correctAnswer": "*",
+            "explanation": "The * operator is the dereference operator, used to access the value stored at a pointer's address."
+          },
+          {
+            "id": "q8",
+            "question": "Which header file is required for printf and scanf?",
+            "options": ["stdlib.h", "string.h", "stdio.h", "math.h"],
+            "correctAnswer": "stdio.h",
+            "explanation": "The stdio.h header provides input/output functions like printf and scanf."
+          },
+          {
+            "id": "q9",
+            "question": "Which statement is used to exit from a loop in C?",
+            "options": ["exit", "stop", "break", "end"],
+            "correctAnswer": "break",
+            "explanation": "The break statement is used to exit from a loop immediately."
+          },
+          {
+            "id": "q10",
+            "question": "What does the array name represent in C?",
+            "options": [
+              "The value of the first element",
+              "The last element",
+              "The memory address of the first element",
+              "A pointer to the last element"
+            ],
+            "correctAnswer": "The memory address of the first element",
+            "explanation": "In C, the array name acts as a pointer to the first element."
+          }
+        ]
+      }
+    }
+  }
+}

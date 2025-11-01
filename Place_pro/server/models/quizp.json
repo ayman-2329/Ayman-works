@@ -1,0 +1,301 @@
+// lib/screens/course_quiz_screen.dart
+
+class CourseQuizScreen extends StatefulWidget {
+  final Quiz quiz;
+
+  CourseQuizScreen({required this.quiz});
+
+  @override
+  _CourseQuizScreenState createState() => _CourseQuizScreenState();
+}
+
+class _CourseQuizScreenState extends State<CourseQuizScreen> {
+  int _currentQuestionIndex = 0;
+  int _score = 0;
+  String? _selectedOption;
+  bool _showResults = false;
+  List<int> _incorrectAnswers = [];
+  Map<int, String> _userAnswers = {};
+
+  void _answerQuestion(String option) {
+    setState(() {
+      _selectedOption = option;
+      _userAnswers[_currentQuestionIndex] = option;
+      
+      if (option == widget.quiz.questions[_currentQuestionIndex].correctAnswer) {
+        _score++;
+      } else {
+        _incorrectAnswers.add(_currentQuestionIndex);
+      }
+      
+      // Move to next question after delay
+      Future.delayed(Duration(seconds: 1), () {
+        if (_currentQuestionIndex < widget.quiz.questions.length - 1) {
+          setState(() {
+            _currentQuestionIndex++;
+            _selectedOption = null;
+          });
+        } else {
+          setState(() {
+            _showResults = true;
+          });
+        }
+      });
+    });
+  }
+
+  void _restartQuiz() {
+    setState(() {
+      _currentQuestionIndex = 0;
+      _score = 0;
+      _selectedOption = null;
+      _showResults = false;
+      _incorrectAnswers = [];
+      _userAnswers = {};
+    });
+  }
+
+  void _reviewIncorrectAnswers() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => QuizReviewScreen(
+          questions: widget.quiz.questions,
+          incorrectAnswers: _incorrectAnswers,
+          userAnswers: _userAnswers,
+        ),
+      ),
+    );
+  }
+
+  void _reviewAllAnswers() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => QuizReviewScreen(
+          questions: widget.quiz.questions,
+          incorrectAnswers: List<int>.generate(widget.quiz.questions.length, (i) => i),
+          userAnswers: _userAnswers,
+          showAll: true,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_showResults) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('Quiz Results'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Quiz Completed!',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 20),
+              Text(
+                'Your Score: $_score/${widget.quiz.questions.length}',
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(height: 20),
+              Text(
+                'Percentage: ${(_score / widget.quiz.questions.length * 100).toStringAsFixed(1)}%',
+                style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(height: 20),
+              Text(
+                _score >= widget.quiz.questions.length * 0.8
+                    ? 'Excellent! You have mastered this course.'
+                    : _score >= widget.quiz.questions.length * 0.6
+                        ? 'Good effort! Review the material to improve.'
+                        : 'Keep practicing! You can do better.',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 30),
+              if (_incorrectAnswers.isNotEmpty)
+                ElevatedButton(
+                  onPressed: _reviewIncorrectAnswers,
+                  child: Text('Review Incorrect Answers'),
+                ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: _reviewAllAnswers,
+                child: Text('Review All Answers'),
+              ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: _restartQuiz,
+                child: Text('Retry Quiz'),
+              ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('Back to Course'),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    final question = widget.quiz.questions[_currentQuestionIndex];
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.quiz.title),
+      ),
+      body: Column(
+        children: [
+          LinearProgressIndicator(
+            value: (_currentQuestionIndex + 1) / widget.quiz.questions.length,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Question ${_currentQuestionIndex + 1}/${widget.quiz.questions.length}',
+                  style: TextStyle(fontSize: 18),
+                ),
+                Text(
+                  'Score: $_score',
+                  style: TextStyle(fontSize: 18),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    question.question,
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(height: 20),
+                  ...question.options.map((option) => Container(
+                        width: double.infinity,
+                        margin: EdgeInsets.symmetric(vertical: 8),
+                        child: ElevatedButton(
+                          onPressed: _selectedOption == null
+                              ? () => _answerQuestion(option)
+                              : null,
+                          style: ElevatedButton.styleFrom(
+                            primary: _selectedOption == option
+                                ? (option == question.correctAnswer
+                                    ? Colors.green
+                                    : Colors.red)
+                                : null,
+                          ),
+                          child: Text(option),
+                        ),
+                      )),
+                  if (_selectedOption != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16.0),
+                      child: Text(
+                        'Explanation: ${question.explanation}',
+                        style: TextStyle(fontStyle: FontStyle.italic),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Add a new screen for reviewing answers
+class QuizReviewScreen extends StatelessWidget {
+  final List<Question> questions;
+  final List<int> incorrectAnswers;
+  final Map<int, String> userAnswers;
+  final bool showAll;
+
+  QuizReviewScreen({
+    required this.questions,
+    required this.incorrectAnswers,
+    required this.userAnswers,
+    this.showAll = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final questionsToReview = showAll 
+        ? List<int>.generate(questions.length, (i) => i)
+        : incorrectAnswers;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(showAll ? 'Review All Answers' : 'Review Incorrect Answers'),
+      ),
+      body: ListView.builder(
+        padding: EdgeInsets.all(16),
+        itemCount: questionsToReview.length,
+        itemBuilder: (context, index) {
+          final questionIndex = questionsToReview[index];
+          final question = questions[questionIndex];
+          final userAnswer = userAnswers[questionIndex] ?? 'Not answered';
+          final isCorrect = userAnswer == question.correctAnswer;
+          
+          return Card(
+            elevation: 4,
+            margin: EdgeInsets.only(bottom: 16),
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Question ${questionIndex + 1}',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    question.question,
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'Your Answer: $userAnswer',
+                    style: TextStyle(
+                      color: isCorrect ? Colors.green : Colors.red,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  if (!isCorrect) ...[
+                    SizedBox(height: 8),
+                    Text(
+                      'Correct Answer: ${question.correctAnswer}',
+                      style: TextStyle(
+                        color: Colors.green,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                  SizedBox(height: 8),
+                  Text(
+                    'Explanation: ${question.explanation}',
+                    style: TextStyle(fontStyle: FontStyle.italic),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "courses": {
+    "python_basics": {
+      "id": "python_basics",
+      "title": "Python Programming Fundamentals",
+      "description": "A comprehensive introduction to Python programming for beginners",
+      "duration": "6 weeks",
+      "difficulty": "Beginner",
+      "category": "programming",
+      "image": "https://example.com/images/python_course.jpg",
+      "lessons": [
+        {
+          "id": "lesson1",
+          "title": "Introduction to Python",
+          "order": 1,
+          "content": {
+            "text": "Python is a high-level, interpreted programming language known for its simplicity and readability. Created by Guido van Rossum and first released in 1991, Python emphasizes code readability with its notable use of significant whitespace.",
+            "keyPoints": [
+              "Python is interpreted and high-level",
+              "Emphasizes code readability",
+              "Supports multiple programming paradigms",
+              "Has a comprehensive standard library"
+            ],
+            "codeExample": {
+              "title": "Your First Python Program",
+              "code": "# This is your first Python program\nprint(\"Hello, World!\")\n\n# Python as a calculator\nprint(2 + 3)\nprint(10 / 2)\n\n# Variables\nmessage = \"Welcome to Python!\"\nprint(message)",
+              "explanation": "This example shows basic Python syntax. The print() function displays output. Variables store data values without needing explicit declaration."
+            },
+            "exercises": [
+              {
+                "id": "ex1",
+                "title": "Print Your Name",
+                "description": "Write a Python program that prints your name on the screen.",
+                "solution": "print(\"Your Name\")"
+              },
+              {
+                "id": "ex2",
+                "title": "Simple Calculator",
+                "description": "Write a program that calculates the sum of 15 and 27.",
+                "solution": "print(15 + 27)"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lesson2",
+          "title": "Variables and Data Types",
+          "order": 2,
+          "content": {
+            "text": "Variables are containers for storing data values. Python has various data types including integers, floats, strings, booleans, lists, tuples, dictionaries, and sets.",
+            "keyPoints": [
+              "Variables are created the moment you first assign a value to them",
+              "Python is dynamically typed",
+              "Data types include int, float, str, bool, list, tuple, dict, set",
+              "Type conversion is possible using built-in functions"
+            ],
+            "codeExample": {
+              "title": "Working with Variables and Data Types",
+              "code": "# Integer\nage = 25\nprint(type(age))  # <class 'int'>\n\n# Float\nheight = 5.9\nprint(type(height))  # <class 'float'>\n\n# String\nname = \"Alice\"\nprint(type(name))  # <class 'str'>\n\n# Boolean\nis_student = True\nprint(type(is_student))  # <class 'bool'>\n\n# List\ngrades = [85, 90, 78, 92]\nprint(type(grades))  # <class 'list'>\n\n# Dictionary\nstudent = {\"name\": \"Bob\", \"age\": 22, \"grades\": [80, 85, 90]}\nprint(type(student))  # <class 'dict'>",
+              "explanation": "This example demonstrates different data types in Python. The type() function returns the data type of any object."
+            },
+            "exercises": [
+              {
+                "id": "ex3",
+                "title": "Variable Assignment",
+                "description": "Create variables for your name (string), age (integer), height (float), and student status (boolean).",
+                "solution": "name = \"John Doe\"\nage = 20\nheight = 5.8\nis_student = True"
+              },
+              {
+                "id": "ex4",
+                "title": "Type Conversion",
+                "description": "Convert the string \"123\" to an integer and add 5 to it.",
+                "solution": "num_str = \"123\"\nnum_int = int(num_str)\nresult = num_int + 5\nprint(result)"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lesson3",
+          "title": "Control Flow",
+          "order": 3,
+          "content": {
+            "text": "Control flow statements allow you to control the order in which your code executes. Python provides conditional statements (if, elif, else) and loops (for, while) for this purpose.",
+            "keyPoints": [
+              "Conditional statements execute code based on certain conditions",
+              "Loops allow you to execute code repeatedly",
+              "Indentation is crucial in Python for defining code blocks",
+              "Break and continue statements modify loop behavior"
+            ],
+            "codeExample": {
+              "title": "Conditional Statements and Loops",
+              "code": "# If-elif-else statement\nscore = 85\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"F\"\nprint(f\"Your grade is: {grade}\")\n\n# For loop\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(\"Fruits:\")\nfor fruit in fruits:\n    print(fruit)\n\n# While loop\ncount = 1\nwhile count <= 5:\n    print(f\"Count: {count}\")\n    count += 1",
+              "explanation": "This example shows conditional statements with if-elif-else, a for loop iterating over a list, and a while loop that runs until a condition is met."
+            },
+            "exercises": [
+              {
+                "id": "ex5",
+                "title": "Even or Odd",
+                "description": "Write a program that checks if a number is even or odd.",
+                "solution": "num = 7\nif num % 2 == 0:\n    print(f\"{num} is even\")\nelse:\n    print(f\"{num} is odd\")"
+              },
+              {
+                "id": "ex6",
+                "title": "Sum of Numbers",
+                "description": "Calculate the sum of numbers from 1 to 10 using a loop.",
+                "solution": "total = 0\nfor i in range(1, 11):\n    total += i\nprint(f\"Sum: {total}\")"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lesson4",
+          "title": "Functions",
+          "order": 4,
+          "content": {
+            "text": "Functions are reusable blocks of code that perform a specific task. They help organize code, make it more readable, and avoid repetition.",
+            "keyPoints": [
+              "Functions are defined using the 'def' keyword",
+              "They can take parameters and return values",
+              "Parameters can have default values",
+              "Functions can be nested and can access variables from the enclosing scope"
+            ],
+            "codeExample": {
+              "title": "Defining and Using Functions",
+              "code": "# Function with no parameters\ndef greet():\n    print(\"Hello, welcome to Python!\")\n\ngreet()\n\n# Function with parameters\ndef add_numbers(a, b):\n    return a + b\n\nresult = add_numbers(5, 3)\nprint(f\"5 + 3 = {result}\")\n\n# Function with default parameter\ndef greet_person(name=\"Guest\"):\n    print(f\"Hello, {name}!\")\n\ngreet_person(\"Alice\")\ngreet_person()\n\n# Function returning multiple values\ndef min_max(numbers):\n    return min(numbers), max(numbers)\n\nnums = [4, 2, 9, 7]\nminimum, maximum = min_max(nums)\nprint(f\"Min: {minimum}, Max: {maximum}\")",
+              "explanation": "This example demonstrates different types of functions: without parameters, with parameters, with default parameters, and returning multiple values."
+            },
+            "exercises": [
+              {
+                "id": "ex7",
+                "title": "Area Calculator",
+                "description": "Write a function that calculates the area of a rectangle given its length and width.",
+                "solution": "def rectangle_area(length, width):\n    return length * width\n\narea = rectangle_area(5, 3)\nprint(f\"Area: {area}\")"
+              },
+              {
+                "id": "ex8",
+                "title": "Factorial Function",
+                "description": "Create a function that calculates the factorial of a number.",
+                "solution": "def factorial(n):\n    result = 1\n    for i in range(1, n + 1):\n        result *= i\n    return result\n\nprint(factorial(5))"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lesson5",
+          "title": "Working with Files",
+          "order": 5,
+          "content": {
+            "text": "Python provides built-in functions for reading from and writing to files. This is essential for data persistence and processing external data.",
+            "keyPoints": [
+              "Use the open() function to work with files",
+              "Specify the mode: 'r' for read, 'w' for write, 'a' for append",
+              "Always close files after operations or use 'with' statement",
+              "Handle file operations with try-except blocks"
+            ],
+            "codeExample": {
+              "title": "Reading and Writing Files",
+              "code": "# Writing to a file\nwith open(\"example.txt\", \"w\") as file:\n    file.write(\"Hello, Python!\\n\")\n    file.write(\"This is a file example.\\n\")\n\n# Reading from a file\nwith open(\"example.txt\", \"r\") as file:\n    content = file.read()\n    print(\"File content:\")\n    print(content)\n\n# Reading line by line\nwith open(\"example.txt\", \"r\") as file:\n    print(\"\\nReading line by line:\")\n    for line in file:\n        print(line.strip())\n\n# Appending to a file\nwith open(\"example.txt\", \"a\") as file:\n    file.write(\"This line is appended.\\n\")\n\n# Reading the updated file\nwith open(\"example.txt\", \"r\") as file:\n    print(\"\\nAfter appending:\")\n    print(file.read())",
+              "explanation": "This example shows how to write to a file, read its entire content, read it line by line, and append additional content. The 'with' statement ensures proper file handling."
+            },
+            "exercises": [
+              {
+                "id": "ex9",
+                "title": "Word Counter",
+                "description": "Write a program that reads a file and counts the number of words in it.",
+                "solution": "with open(\"example.txt\", \"r\") as file:\n    content = file.read()\n    words = content.split()\n    print(f\"Number of words: {len(words)}\")"
+              },
+              {
+                "id": "ex10",
+                "title": "File Copy",
+                "description": "Create a program that copies the content of one file to another.",
+                "solution": "with open(\"example.txt\", \"r\") as source:\n    content = source.read()\n\nwith open(\"copy.txt\", \"w\") as destination:\n    destination.write(content)\n\nprint(\"File copied successfully!\")"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lesson6",
+          "title": "Introduction to Object-Oriented Programming",
+          "order": 6,
+          "content": {
+            "text": "Object-Oriented Programming (OOP) is a programming paradigm that uses objects and classes. Python supports OOP with classes, inheritance, encapsulation, and polymorphism.",
+            "keyPoints": [
+              "Classes are blueprints for creating objects",
+              "Objects have attributes (data) and methods (functions)",
+              "Inheritance allows a class to inherit attributes and methods from another class",
+              "Encapsulation bundles data and methods that work on the data"
+            ],
+            "codeExample": {
+              "title": "Classes and Objects",
+              "code": "# Defining a class\nclass Dog:\n    # Class attribute\n    species = \"Canis familiaris\"\n    \n    # Initializer / Constructor\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    \n    # Instance method\n    def description(self):\n        return f\"{self.name} is {self.age} years old\"\n    \n    # Another instance method\n    def speak(self, sound):\n        return f\"{self.name} says {sound}\"\n\n# Creating objects (instances)\nbuddy = Dog(\"Buddy\", 5)\nmiles = Dog(\"Miles\", 2)\n\n# Accessing attributes and methods\nprint(buddy.name)\nprint(miles.age)\nprint(buddy.description())\nprint(miles.speak(\"Woof Woof\"))\n\n# Inheritance example\nclass Bulldog(Dog):\n    def speak(self, sound=\"Arf\"):\n        return f\"{self.name} says {sound}\"\n\njack = Bulldog(\"Jack\", 3)\nprint(jack.speak())  # Jack says Arf",
+              "explanation": "This example demonstrates defining a Dog class with attributes and methods, creating objects, and implementing inheritance with a Bulldog subclass."
+            },
+            "exercises": [
+              {
+                "id": "ex11",
+                "title": "Student Class",
+                "description": "Create a Student class with attributes for name and grades, and methods to add grades and calculate average.",
+                "solution": "class Student:\n    def __init__(self, name):\n        self.name = name\n        self.grades = []\n    \n    def add_grade(self, grade):\n        self.grades.append(grade)\n    \n    def average_grade(self):\n        if not self.grades:\n            return 0\n        return sum(self.grades) / len(self.grades)\n\ns = Student(\"Alice\")\ns.add_grade(85)\ns.add_grade(90)\nprint(f\"{s.name}'s average grade: {s.average_grade()}\")"
+              },
+              {
+                "id": "ex12",
+                "title": "Bank Account",
+                "description": "Implement a BankAccount class with methods to deposit, withdraw, and check balance.",
+                "solution": "class BankAccount:\n    def __init__(self, balance=0):\n        self.balance = balance\n    \n    def deposit(self, amount):\n        self.balance += amount\n        return f\"Deposited ${amount}. New balance: ${self.balance}\"\n    \n    def withdraw(self, amount):\n        if amount > self.balance:\n            return \"Insufficient funds\"\n        self.balance -= amount\n        return f\"Withdrew ${amount}. New balance: ${self.balance}\"\n    \n    def check_balance(self):\n        return f\"Current balance: ${self.balance}\"\n\naccount = BankAccount(100)\nprint(account.deposit(50))\nprint(account.withdraw(25))\nprint(account.check_balance())"
+              }
+            ]
+          }
+        }
+      ],
+      "quiz": {
+        "id": "python_basics_quiz",
+        "title": "Python Basics Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following is the correct way to create a variable in Python?",
+            "options": [
+              "variable name = value",
+              "name = value",
+              "var name = value",
+              "v name = value"
+            ],
+            "correctAnswer": "name = value",
+            "explanation": "In Python, variables are created by simply assigning a value to them using the equals sign."
+          },
+          {
+            "id": "q2",
+            "question": "What is the output of print(type(10))?",
+            "options": [
+              "<class 'int'>",
+              "<class 'float'>",
+              "<class 'str'>",
+              "<class 'number'>"
+            ],
+            "correctAnswer": "<class 'int'>",
+            "explanation": "The type() function returns the data type of the object. 10 is an integer, so it returns <class 'int'>."
+          },
+          {
+            "id": "q3",
+            "question": "Which loop is guaranteed to execute at least once?",
+            "options": [
+              "for loop",
+              "while loop",
+              "do-while loop",
+              "None of the above"
+            ],
+            "correctAnswer": "do-while loop",
+            "explanation": "A do-while loop executes the code block at least once before checking the condition. However, note that Python does not have a built-in do-while loop."
+          },
+          {
+            "id": "q4",
+            "question": "What is the correct way to define a function in Python?",
+            "options": [
+              "function myFunction():",
+              "def myFunction():",
+              "create myFunction():",
+              "func myFunction():"
+            ],
+            "correctAnswer": "def myFunction():",
+            "explanation": "In Python, functions are defined using the 'def' keyword followed by the function name and parentheses."
+          },
+          {
+            "id": "q5",
+            "question": "Which of the following is used to open a file for reading in Python?",
+            "options": [
+              "open('file.txt', 'r')",
+              "open('file.txt', 'read')",
+              "file.open('file.txt', 'r')",
+              "read('file.txt')"
+            ],
+            "correctAnswer": "open('file.txt', 'r')",
+            "explanation": "The open() function is used to open files, and 'r' is the mode for reading."
+          },
+          {
+            "id": "q6",
+            "question": "What is the purpose of the __init__ method in a Python class?",
+            "options": [
+              "To initialize the class attributes",
+              "To destroy the object",
+              "To define class methods",
+              "To create class variables"
+            ],
+            "correctAnswer": "To initialize the class attributes",
+            "explanation": "The __init__ method is a special method called the constructor or initializer. It is automatically called when a new object is created and is used to initialize the object's attributes."
+          },
+          {
+            "id": "q7",
+            "question": "Which of the following is the correct way to create a list in Python?",
+            "options": [
+              "list = [1, 2, 3]",
+              "list = (1, 2, 3)",
+              "list = {1, 2, 3}",
+              "list = 1, 2, 3"
+            ],
+            "correctAnswer": "list = [1, 2, 3]",
+            "explanation": "In Python, lists are created using square brackets []. Parentheses () are for tuples, and curly braces {} are for dictionaries or sets."
+          },
+          {
+            "id": "q8",
+            "question": "What is the output of print(10 // 3)?",
+            "options": [
+              "3",
+              "3.333",
+              "3.0",
+              "1"
+            ],
+            "correctAnswer": "3",
+            "explanation": "The // operator in Python performs floor division, which returns the largest integer less than or equal to the division result."
+          },
+          {
+            "id": "q9",
+            "question": "Which of the following statements is used to exit a loop in Python?",
+            "options": [
+              "exit",
+              "break",
+              "stop",
+              "end"
+            ],
+            "correctAnswer": "break",
+            "explanation": "The 'break' statement is used to exit a loop prematurely in Python."
+          },
+          {
+            "id": "q10",
+            "question": "What is the correct way to handle exceptions in Python?",
+            "options": [
+              "try-except",
+              "do-catch",
+              "try-catch",
+              "handle-exception"
+            ],
+            "correctAnswer": "try-except",
+            "explanation": "Python uses try-except blocks to handle exceptions. The code that might raise an exception is placed in the try block, and the exception handling code is placed in the except block."
+          }
+        ]
+      }
+    }
+  }
+}
