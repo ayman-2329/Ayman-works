@@ -9,6 +9,7 @@ A comprehensive placement application for SAEC students, providing access to job
 
 ## 🚀 Features
 
+### Core Features
 - **User Authentication** - Secure login/signup with email/password and social providers
 - **Job/Drive Listings** - Browse and apply to current job openings and placement drives
 - **Aptitude Tests** - Practice with a variety of aptitude questions and mock tests
@@ -17,7 +18,18 @@ A comprehensive placement application for SAEC students, providing access to job
 - **Push Notifications** - Stay updated with real-time notifications
 - **Analytics** - Track user engagement and app performance
 
-## 📋 Prerequisites
+### AI-Powered Features
+- **Smart Chatbot** - AI-powered career guidance and query resolution
+- **Daily Tips** - AI-generated daily tips for career development
+- **Personalized Recommendations** - Smart job and resource recommendations
+- **Interview Preparation** - AI-assisted mock interviews and feedback
+
+## � Documentation
+
+- [Developer Guide](docs/DEVELOPER_GUIDE.md) - Comprehensive guide for developers
+- [AI Backend Documentation](docs/AI_BACKEND.md) - Setup and usage guide for the AI backend
+
+## �📋 Prerequisites
 
 - Flutter SDK (>=3.13.0)
 - Dart SDK (>=3.1.0)
@@ -25,6 +37,7 @@ A comprehensive placement application for SAEC students, providing access to job
 - Java JDK 11 or later
 - Firebase project (for backend services)
 - Node.js (for backend server)
+- Python 3.8+ (for AI backend)
 
 ## 🛠️ Project Structure
 
