@@ -240,18 +240,9 @@ and how to run it from a clean clone.
   beat newline-delimited strings the first time a wire glitches.
 
 
----
 
-## GitHub Activity
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ayman-2329&show_icons=true&hide_border=true" height="150" alt="GitHub stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayman-2329&layout=compact&hide_border=true" height="150" alt="Top languages" />
-</p>
-
----
 
 <p align="center">
   Open to internships and collaboration in <b>embedded AI</b>, <b>computer vision</b>, and <b>automation</b>.<br/>
-  <a href="mailto:mohammedayman2329@gmail.com">mohammedayman2329.com</a>
+  <a href="mailto:mohammedayman2329@gmail.com">mohammedayman2329@gmail.com</a>
 </p>
